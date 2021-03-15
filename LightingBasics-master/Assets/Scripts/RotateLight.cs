@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class RotateLight : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float speed = 100.0f;
 
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Quaternion.Euler(0, 0, 0);
+        transform.Rotate(Vector3.up * speed * Time.deltaTime, Space.World);
     }
 }
