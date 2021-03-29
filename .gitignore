@@ -61,3 +61,5 @@ crashlytics-build.properties
 3D Basic/Library/
 3D Basic/Temp/
 LightBasic/Library/
+RaycastTest/Library/
+RaycastTest/Temp/
