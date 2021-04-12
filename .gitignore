@@ -63,3 +63,5 @@ crashlytics-build.properties
 LightBasic/Library/
 RaycastTest/Library/
 RaycastTest/Temp/
+/Coroutine/New Unity Project/Library
+/Coroutine/New Unity Project/Temp
