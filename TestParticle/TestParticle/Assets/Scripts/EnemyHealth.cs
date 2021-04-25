@@ -30,7 +30,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Respawn()
     {
-        hp = 100.0f;
+        currentHp = maxHp;
         this.gameObject.SetActive(true);
     }
 }
