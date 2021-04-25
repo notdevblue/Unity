@@ -14,6 +14,8 @@ public class PlayerShipCon : MonoBehaviour
     [SerializeField] float controlRollFactor = -20f;
 
     float xAxisVal, yAxisVal;
+    public ParticleSystem[] lazers;
+
 
     void Update()
     {
@@ -40,5 +42,18 @@ public class PlayerShipCon : MonoBehaviour
         float roll = xAxisVal * controlRollFactor;
 
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+
+        SetLaser(Input.GetMouseButton(0));
+
+    }
+
+    private void SetLaser(bool isActive)
+    {
+        foreach(ParticleSystem p in lazers)
+        {
+            ParticleSystem.EmissionModule emission = p.emission;
+            emission.enabled = isActive;
+                
+        }
     }
 }
