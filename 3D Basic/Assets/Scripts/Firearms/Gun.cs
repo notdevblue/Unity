@@ -27,6 +27,17 @@ public class Gun : MonoBehaviour
     public      float           reloadTIme              = 1.0f;
     private     float           lastfireTime;                       // 마지막 총 발사 시간
 
+    [Header("Audio Clips")]
+    public AudioClip reloadSound;
+    public AudioClip fireSound;
+
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void Start()
     {
         magAmmo = magCap;
@@ -45,6 +56,8 @@ public class Gun : MonoBehaviour
 
     private void Shot()
     {
+        audioSource.clip = fireSound; // TODO : 풀링
+        audioSource.Play();
         RaycastHit hit; // 수행평가
         Vector3 hitPos = Vector3.zero;
         if (Physics.Raycast(firePos.position, firePos.forward, out hit, fireDistance))
@@ -93,6 +106,9 @@ public class Gun : MonoBehaviour
 
     public IEnumerator ReloadRoutine()
     {
+        audioSource.clip = reloadSound;
+        audioSource.Play();
+
         state = State.Reloading;
         yield return new WaitForSeconds(reloadTIme);
         magAmmo = magCap;
