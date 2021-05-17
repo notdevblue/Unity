@@ -70,3 +70,6 @@ RaycastTest/Temp/
 /TestNavMesh/Library
 /TestNavMesh/Logs
 /TestNavMesh/Temp
+/Singleton/Library
+/SingletonExample/Library
+/SingletonExample/Temp
