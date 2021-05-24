@@ -33,11 +33,7 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("PLAYER");
-        if(player != null)
-        {
-            playerTr = player.transform;
-        }
+        playerTr = GameManager.instance.playerTr;
     }
 
     private void OnEnable() // Start 보다 빠름
